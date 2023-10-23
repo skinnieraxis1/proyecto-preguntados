@@ -1,2 +1,2 @@
 # proyecto-preguntados
-Hossein, Mitre, Montenegro, Feruglio, Kuo
+Hossein, Paz, Montenegro, Feruglio, Kuo

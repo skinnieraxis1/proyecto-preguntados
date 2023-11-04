@@ -1,0 +1,59 @@
+.card {
+    width: 200px;
+    height: 200px;
+    background: #cc6ce6be;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .frame {
+    border: 5px solid white;
+    padding: 20px; 
+    border-radius: 10px; 
+  }
+
+  .content {
+    font-size: 24px;
+  }
+
+  .my-button {
+    
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: transform 1s; 
+    height: 10%; 
+    width: 50%;
+  }
+
+  .my-button:hover {
+    transform: scale(1.2);
+  }
+
+  .contents {
+    color: white;
+    font-size: 20px;
+  }
+ body{
+  background-image: url(../IMG/fondo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+ }
+
+ .row{
+  margin-top: 12%; 
+  margin-left: 22%;
+ }
+
+ .primero{
+  height: 100%; 
+  width: 45%;
+ }
+
+ .sengundo{
+   height: 100%; 
+   width: 45%;
+ }
+ 

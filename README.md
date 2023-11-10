@@ -7,3 +7,11 @@ parecido al preguntados
 fuente: roboto, merriweather, montserrat
 logo: Gamequick
 encuestas: publicas o privadas
+
+
+DNS
+DHCP
+FTP
+APACHE
+Node.js
+MySQL

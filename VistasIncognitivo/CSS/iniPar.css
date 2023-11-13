@@ -1,0 +1,100 @@
+body {
+    background-image: url(../IMG/fondoN2.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0; 
+    font-family: 'Arial', sans-serif; 
+}
+
+.car {
+    background-color: #6E417B;
+    width: 60%;
+    margin: 10% auto; 
+    padding: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    border-radius: 15px; 
+}
+
+.cardTitle {
+    margin-top: 1%;
+    text-align: center;
+    color: aliceblue;
+    font-size: 2.5em; 
+}
+
+.subtitulo {
+    margin-top: 1%;
+    margin-left: 3%;
+    text-align: left;
+    color: aliceblue;
+    font-size: 1.5em; 
+}
+
+.form-select {
+    margin-left: 3%;
+    margin-top: 1%;
+    background-color: #ECAB33;
+    color: #ffffff;
+    height: 100%;
+    width: 70px;
+}
+
+.img {
+    margin-left: 10%;
+    margin-top: 1%;
+    width: 27.5%;
+    height: 47.5%;
+    border-radius: 10%; 
+}
+
+.input-group-text {
+    margin-left: 3%;
+    margin-top: 1%;
+}
+
+.row {
+    background-color: #ECAB33;
+    color: aliceblue;
+    margin: 3% auto; 
+    height: 30%;
+    width: 80%;
+    padding: 10px; 
+    border-radius: 15px; 
+    margin-left: 40%;
+}
+
+.blanco {
+    width: 0.1%;
+    height: 100%;
+}
+
+.col {
+    border-bottom: 1px solid white; 
+    padding: 10px; 
+}
+
+* {
+    border-radius: 10%;
+    box-sizing: border-box; 
+}
+
+.form-control {
+    height: 100%;
+    width: 70px;
+}
+
+.carta {
+    background-color: #ECAB33;
+    color: #ffffff;
+    height: 50%;
+    width: 90%;
+    margin: 10px auto; 
+    padding: 10px; 
+    border-radius: 15px; 
+}
+
+h1 {
+    text-align: center;
+    margin: 0; 
+    font-size: 2em; 
+}

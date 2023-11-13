@@ -1,0 +1,20 @@
+nombre
+genero
+tematica
+codigo
+
+image
+tipo (cuestionario)
+
+pregunta
+
+var11
+var12
+
+var21
+var22
+var23
+var24
+
+var31
+var32

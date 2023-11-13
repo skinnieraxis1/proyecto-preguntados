@@ -1,0 +1,104 @@
+<!--trashly spamming shit-->
+<!--not anymore :)-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="javascript.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div class="fondo">
+      <p class="title">Crear Cuestionario</p>
+      <form action="" method="post">
+
+        <div class="0" id="0" style="display: block;text-align: center;">
+          <table style="margin-top: 50px;">
+            <tr>
+              <td class="td">NOMBRE:</td>
+              <td class="td">GÉNERO:</td>
+            </tr>
+            <tr>
+              <td><input class="itext" name="nombre" type="text" maxlength="15" placeholder="Ingrese nombre" onfocus="this.value=''"></td>
+              <td><input class="itext" name="genero" type="text" maxlength="15" placeholder="Ingrese género" onfocus="this.value=''"></td>
+            </tr>
+            <tr>
+              <td class="td">TEMÁTICA:</td>
+              <td class="td">CÓDIGO:</td>
+            </tr>
+            <tr>
+              <td><input class="itext" name="tematica" type="text" maxlength="15" placeholder="Ingrese temática" onfocus="this.value=''"></td>
+              <td><input class="itext" name="codigo" type="text" maxlength="10" placeholder="Ingrese código" onfocus="this.value=''"></td>
+            </tr>
+          </table>
+          <button class="s" onclick="setup()">SIGUIENTE</button>
+        </div>
+
+        <div class="0.5" id="0.5" style="display: none;">
+          <div class="image-upload">
+            <a style="color: white; font-size: 25px;">Imagen fondo: </a>
+            <label for="file-input">
+              <img src="images/folder-icon.png" width="40px" height="40px" style="position: absolute;margin-left: 10px;cursor: pointer;"/>
+            </label>
+            <input type="file" name="image" id="file-input" accept="image/*" style="left: 0px; display: none;" onchange="dimage(this)">
+          </div>
+          <select class="select_ctype" name="tipo" id="slct" onchange="">
+            <option value="0" selected disabled>+</option>
+            <option value="1">TrueFalse</option>
+            <option value="2">RespuestaCorrecta</option>
+            <option value="3">Ordenar</option>
+          </select>
+          <script>
+            document.getElementById("slct").onchange = function(){
+              document.getElementById(1).style.display = "none";
+              document.getElementById(2).style.display = "none";
+              document.getElementById(3).style.display = "none";
+              value = document.getElementById("slct").value;
+              required_reset(value);
+              document.getElementById("slct").value = "0";
+              document.getElementById(value).style.display = "block";
+            }
+          </script>
+          <div style="position: relative;">
+            <img src="images/stardew_valley.jpg" id="output" class="ifondo">
+            <textarea class="pregunta" name="pregunta" rows="4" cols="50" maxlength="54" placeholder="Ingrese pregunta" required></textarea>
+            <!--different part start-->
+        
+              <div class="1" id="1" style="display: none;">
+                <input type="text" name="var11" id="r11" class="r1" maxlength="25" placeholder="Respuesta correcta" style="top: 18%; background-color: rgb(59, 210, 123);">
+                <input type="text" name="var12" id="r12" class="r1" maxlength="25" placeholder="Respuesta incorrecta" style="bottom: 13%;background-color: rgb(246, 67, 41);">
+              </div>
+
+              <div class="2" id="2" style="display: none;">
+                <input type="text" name="var21" id="r21" class="r2" maxlength="20" placeholder="Respuesta 1" style="top: 15%;right: 27%;">
+                <input type="text" name="var22" id="r22" class="r2" maxlength="20" placeholder="Respuesta 2" style="top: 15%;right: 3%;">
+                <input type="text" name="var23" id="r23" class="r2" maxlength="20" placeholder="Respuesta 3" style="top: 60%;right: 27%;">
+                <input type="text" name="var24" id="r24" class="r2" maxlength="20" placeholder="Respuesta 4" style="top: 60%;right: 3%;background-color: rgb(56, 208, 127);">
+              </div>
+
+              <div class="3" id="3" style="display: none;">
+                <textarea class="r3" name="var31" id="r3" maxlength="63" placeholder="Respuesta" onchange="max_partes()"></textarea>
+                <div class="ecpss">
+                  <label for="ecpss">En cuantas partes se separa: </label>
+                  <input type="number" name="var32" id="ecpss" min="1" max="1">
+                </div>
+              </div>
+
+            <!--different part end-->
+            <label for="reset_button">
+              <img src="images/trashbin.png" class="tb">
+            </label>
+            <button type="reset" id="reset_button" style="display: none;"></button>
+          </div>
+          <div style="text-align: center;"><button type="submit">TERMINAR</button></div>
+        </div>
+      </form>  
+    </div>
+    <script>
+      document.getElementById("r11").setAttribute("required", "");
+      document.getElementById("r12").setAttribute("required", "");
+    </script>
+  </body>
+</html>

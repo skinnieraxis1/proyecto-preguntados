@@ -1,0 +1,63 @@
+.cuerpoIniciarSesion{
+    padding-top: 10%;
+}
+
+.cuadradoIniciarSesion{
+    background-color: rgba(110, 65, 123, 0.85);
+    border-radius: 50px;
+    width: 80%;
+    margin-left: 5%;
+    color: white;
+    padding: 10px 100px 100px 100px;
+}
+
+.tituloIniciarSesion{
+    font-size: 80px;
+    text-align: center;
+    color: white;
+}
+
+.sesionLabel{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    width: 35%;
+    font: weight 10px;
+    margin: auto;
+    float: left;
+}
+
+.sesionInput{
+    height: 70px;
+    width: 65%;
+    background-color: #ECAB33;
+    border-radius: 25px;
+    font-size: 30px;
+}
+
+.sesionText{
+    color: rgb(177, 176, 201);
+    margin-top: 10px;
+}
+
+.contenedorForm{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.formTwo{
+    margin-top: 5%
+}
+
+.formThree{
+    margin-top: 5%;
+    text-align: center;
+}
+
+.sesionSubmit{
+    padding: 20px;
+    border-radius: 25px;
+    font-size: 50px;
+    background-color: #ebe045;
+    color: white;
+}

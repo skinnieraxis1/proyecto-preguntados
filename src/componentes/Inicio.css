@@ -1,0 +1,89 @@
+.cuerpoInicio {
+  height: 100%;
+  width: 100%;
+  background-image: url(../assets/imagenes/IMG-20231112-WA0016.jpg);
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.card, .card2{
+  padding: 15px;
+  border-radius: 40px;
+  background: rgba(194, 122, 215, 0.9);
+  width: 300px;
+  height: 400px;
+  margin: auto;
+}
+
+.txt{
+  padding-top: 5px;
+  font-weight:600;
+  text-align: center;
+  color: white;
+  font-size: 23px;
+  font-family: Montserrat;
+}
+
+.txt2{
+  color: white;
+  padding-top: 15px;
+  font-size: 12px;
+  font-family: Montserrat;
+}
+.borde_Interior{
+  border:3px solid white;
+  border-radius: 40px;
+  height: 300px;
+}
+.borde_Interiorr{
+  border:3px solid white;
+  border-radius: 40px;
+  height: 392px;
+}
+.box2{
+  border:3px solid white;
+  border-radius: 40px;
+  height: 400px;
+}
+.input-group{
+  margin-top: 5px;
+}
+.AgregCode{
+  background: rgba(194, 122, 215, 0.0);
+  border:3px solid white;
+  border-radius: 30px;
+  width: 250px;
+  margin-left: 17px;
+  padding-left: 10px;
+}
+.inputInicio{
+  border:3px solid white;
+  color: white;
+  outline: none;
+  padding-left: 10px;
+}
+
+.inputInicio::placeholder {
+  font-family: Montserrat;
+  font-size: 14px;
+  color: white;
+}
+.imagenInicio{
+  height: 130px; 
+  width: 130px;
+
+  margin-top: 17px;
+}
+.zonaCard1, .zonaCard2{
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

@@ -1,22 +1,17 @@
-
 import "bootstrap"
-import {BsIncognito} from 'react-icons/bs'
 import './Genero.css'
 
-function Genero() {
-
-
+function Genero(props) {
   return (
     <>
-        <div className="card" style="width: 15rem;">
-            <img src="" className="card-img-top" alt="..."/>
-            <div className="card-body">
-            <h5 className="card-title">Libros</h5>
-            <a href="#" className="btn btn-primary stretched-link"></a>
-            </div>
+      <div className="genero" onClick={() => props.toggleComponent("Servidor", props.title)}>
+        <img className="imagen" src={props.img} alt=""/>
+        <div className="textDiv">
+          <h5 className="genTitle">{props.title}</h5>
         </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default Genero
+export default Genero;

@@ -1,0 +1,43 @@
+.cuerpoServidores{
+    padding-top: 70px;
+}
+
+.cuadradoServidores{
+    background-color: rgba(110, 65, 123, 0.85);
+    border-radius: 50px;
+    width: 80%;
+    margin-left: 5%;
+    color: white;
+    padding: 10px 50px 10px 50px;
+}
+
+.tituloServidores{
+   font-size: 80px !important;
+   text-align: center;
+}
+
+.subtituloServidores{
+    font-size: 40px;
+    margin-left: 30px;
+    margin: 0px;
+}
+
+.servidores{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3rem;
+    width: 95%;
+    margin-left: 2rem;
+}
+
+.formServidores{
+    width: 100%;
+    margin-left: 5rem;
+}
+
+.buscadorServidores{
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+}
+

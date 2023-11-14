@@ -7,6 +7,9 @@
     height: 100%;
     width: 16rem;
     float: left;
+    text-align: center;
+    position:fixed;
+    align-items: center;
 }
 
 .boton{
@@ -15,8 +18,8 @@
     height: 5rem;
     border-radius: 25px;
     color: white;
-    white-space:break-spaces;
-    margin: 0 0 1em 2em;
+    white-space: break-spaces;
+    margin: 0 0 1em 0;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -26,7 +29,7 @@
     width: 12rem;
     height: 0.2rem;
 
-    margin: 0 0 1em 2em;
+    margin: 0 0 1em 0;
 }
     
 .icono{
@@ -51,5 +54,15 @@
 }
 
 h2{
+    margin-top: 5%; /* Espaciado superior del texto en porcentaje del contenedor */
     margin-block-end: auto;
+}
+
+.a{
+    font-size: 25px;
+}
+
+.b{
+    font-size: 20px;
+    margin-top: 7%;
 }

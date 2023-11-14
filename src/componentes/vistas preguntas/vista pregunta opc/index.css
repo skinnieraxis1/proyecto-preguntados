@@ -1,0 +1,48 @@
+
+body{
+  background-image: url("/src/imagenes/FONFO3.jpg"), url("/src/imagenes/FONDO\ GRADIENTE\ 222222.png")  ; 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+}
+
+
+.container-fluid{
+  position: relative;
+  display: flex;
+}
+tr , td{
+  margin-left: -20%;
+  text-align:center;
+}
+.cuadro{
+  position: absolute;
+  top: 550px;
+  left: 380px;
+  background-color: #6E417B;
+  text-align: center;
+  border-radius: 40px;
+  padding: 20px;
+
+}
+.widtha{
+  width: 650px;
+}
+.btn-light{
+  justify-content: center;
+  width: 500px;
+  margin: 10px;
+  margin-bottom: 15px;
+  font-size: 30px;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pregunta{
+  margin-left: 10%;
+  margin-right: -70%;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: Montserrat;
+}

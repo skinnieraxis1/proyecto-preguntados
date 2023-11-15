@@ -23,8 +23,8 @@ create table preguntas(
 	id int(11) AUTO_INCREMENT,
     descripcion text,
     puntaje int(11),
-    tipo varchar(11),
-    cuestionario int(11),
+    tipo varchar(20),
+    cuestionario int(20),
     createAt date,
     updateAt date,
     PRIMARY KEY(id),
@@ -43,7 +43,7 @@ create TABLE respuestas(
 CREATE TABLE usuarios(
     nombre VARCHAR(40),
     email VARCHAR(60) ,
-    contraseña VARCHAR(40),
+    contrasena VARCHAR(40),
     createAt date,
     updateAt date,
     PRIMARY KEY(email)
@@ -60,7 +60,7 @@ create TABLE partidas(
     FOREIGN KEY(cuestionario) REFERENCES cuestionarios(id)
 );
 
-create TABLE jugar(
+create TABLE jugars(
     id int(11) AUTO_INCREMENT,
 	partida varchar(9),
     usuario VARCHAR(60),
@@ -72,3 +72,78 @@ create TABLE jugar(
     FOREIGN KEY(usuario) REFERENCES usuarios(email),
     FOREIGN KEY(partida) REFERENCES partidas(codigo)
 );
+
+-- Generos
+INSERT INTO generos (nombres, createAt, updateAt) VALUES
+('Acción', '2023-11-15', '2023-11-15'),
+('Drama', '2023-11-15', '2023-11-15'),
+('Comedia', '2023-11-15', '2023-11-15'),
+('Ciencia Ficción', '2023-11-15', '2023-11-15'),
+('Aventura', '2023-11-15', '2023-11-15');
+
+-- Cuestionarios
+INSERT INTO cuestionarios (tematica, genero, createAt, updateAt) VALUES
+('Preguntas de Acción', 1, '2023-11-15', '2023-11-15'),
+('Historias Emotivas', 2, '2023-11-15', '2023-11-15'),
+('Humor a la Vista', 3, '2023-11-15', '2023-11-15'),
+('Viajes en el Tiempo', 4, '2023-11-15', '2023-11-15'),
+('Desafío en la Selva', 5, '2023-11-15', '2023-11-15');
+
+-- Preguntas
+INSERT INTO preguntas (descripcion, puntaje, tipo, cuestionario, createAt, updateAt) VALUES
+('¿Cuál es la película de acción más taquillera?', 10, 'MultiplesRespuestas', 1, '2023-11-15', '2023-11-15'),
+('Describe una situación emotiva que te haya marcado.', 15, 'Ordenar', 2, '2023-11-15', '2023-11-15'),
+('¿Es verdad que el sol gira alrededor de la Tierra?', 5, 'TrueOrFalse', 3, '2023-11-15', '2023-11-15'),
+('Si pudieras viajar en el tiempo, ¿a qué época irías?', 10, 'MultiplesRespuestas', 4, '2023-11-15', '2023-11-15'),
+('Ordena los siguientes eventos cronológicamente:', 8, 'Ordenar', 5, '2023-11-15', '2023-11-15');
+
+-- Respuestas
+INSERT INTO respuestas (descripcion, correcta, pregunta) VALUES
+('Duro de Matar', true, 1),
+('Matrix', false, 1),
+('La Lista de Schindler', false, 2),
+('Forrest Gump', true, 2),
+('Verdadero', true, 3),
+('Falso', false, 3),
+('Año 3000', false, 4),
+('Época de los Dinosaurios', true, 4),
+('Descubrimiento de América', true, 5),
+('Revolución Industrial', true, 5),
+('Llegada a la Luna', true, 5);
+
+-- Usuarios
+INSERT INTO usuarios (nombre, email, contrasena, createAt, updateAt) VALUES
+('Usuario1', 'usuario1@email.com', 'contraseña1', '2023-11-15', '2023-11-15'),
+('Usuario2', 'usuario2@email.com', 'contraseña2', '2023-11-15', '2023-11-15'),
+('Usuario3', 'usuario3@email.com', 'contraseña3', '2023-11-15', '2023-11-15'),
+('Usuario4', 'usuario4@email.com', 'contraseña4', '2023-11-15', '2023-11-15'),
+('Usuario5', 'usuario5@email.com', 'contraseña5', '2023-11-15', '2023-11-15');
+
+-- Partidas
+INSERT INTO partidas (codigo, cantJugadores, publicaPriv, cuestionario, createAt, updateAt) VALUES
+('ABC123', 4, true, 1, '2023-11-15', '2023-11-15'),
+('DEF456', 3, false, 2, '2023-11-15', '2023-11-15'),
+('GHI789', 5, true, 3, '2023-11-15', '2023-11-15'),
+('JKL012', 2, false, 4, '2023-11-15', '2023-11-15'),
+('MNO345', 6, true, 5, '2023-11-15', '2023-11-15');
+
+-- Jugars
+INSERT INTO jugars (partida, usuario, conectado, puntajeJugador, createAt, updateAt) VALUES
+('ABC123', 'usuario1@email.com', true, 20, '2023-11-15', '2023-11-15'),
+('ABC123', 'usuario2@email.com', true, 18, '2023-11-15', '2023-11-15'),
+('ABC123', 'usuario3@email.com', true, 15, '2023-11-15', '2023-11-15'),
+('ABC123', 'usuario4@email.com', true, 22, '2023-11-15', '2023-11-15'),
+('DEF456', 'usuario1@email.com', true, 25, '2023-11-15', '2023-11-15'),
+('DEF456', 'usuario2@email.com', true, 23, '2023-11-15', '2023-11-15'),
+('DEF456', 'usuario3@email.com', true, 19, '2023-11-15', '2023-11-15'),
+('GHI789', 'usuario1@email.com', true, 30, '2023-11-15', '2023-11-15'),
+('GHI789', 'usuario2@email.com', true, 28, '2023-11-15', '2023-11-15'),
+('GHI789', 'usuario3@email.com', true, 26, '2023-11-15', '2023-11-15'),
+('GHI789', 'usuario4@email.com', true, 24, '2023-11-15', '2023-11-15'),
+('JKL012', 'usuario1@email.com', true, 15, '2023-11-15', '2023-11-15'),
+('JKL012', 'usuario2@email.com', true, 14, '2023-11-15', '2023-11-15'),
+('MNO345', 'usuario1@email.com', true, 28, '2023-11-15', '2023-11-15'),
+('MNO345', 'usuario2@email.com', true, 30, '2023-11-15', '2023-11-15'),
+('MNO345', 'usuario3@email.com', true, 26, '2023-11-15', '2023-11-15'),
+('MNO345', 'usuario4@email.com', true, 29, '2023-11-15', '2023-11-15'),
+('MNO345', 'usuario5@email.com', true, 27, '2023-11-15', '2023-11-15');

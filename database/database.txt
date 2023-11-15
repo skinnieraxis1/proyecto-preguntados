@@ -1,7 +1,7 @@
 CREATE DATABASE incognitiva;
 use incognitiva; 
 
-create table genero(
+create table generos(
 	id int(11) AUTO_INCREMENT,
     nombres varchar(60),
     createAt date,
@@ -9,17 +9,17 @@ create table genero(
     PRIMARY KEY(id)
 );
 
-create table cuestionario(
+create table cuestionarios(
 	id int(11) AUTO_INCREMENT,
     tematica varchar(60),
     genero int(11),
     createAt date,
     updateAt date,
     PRIMARY KEY(id),
-   	FOREIGN KEY(genero) REFERENCES genero(id)
+   	FOREIGN KEY(genero) REFERENCES generos(id)
 );
 
-create table pregunta(
+create table preguntas(
 	id int(11) AUTO_INCREMENT,
     descripcion text,
     puntaje int(11),
@@ -28,19 +28,19 @@ create table pregunta(
     createAt date,
     updateAt date,
     PRIMARY KEY(id),
-    FOREIGN KEY(cuestionario) REFERENCES cuestionario(id)
+    FOREIGN KEY(cuestionario) REFERENCES cuestionarios(id)
 );
 
-create TABLE respuesta(
+create TABLE respuestas(
 	id int(11) AUTO_INCREMENT,
     descripcion text,
     correcta boolean,
     pregunta int(11),
     PRIMARY KEY(id),
-    FOREIGN KEY(pregunta) REFERENCES pregunta(id)
+    FOREIGN KEY(pregunta) REFERENCES preguntas(id)
 );
 
-CREATE TABLE usuario(
+CREATE TABLE usuarios(
     nombre VARCHAR(40),
     email VARCHAR(60) ,
     contraseña VARCHAR(40),
@@ -49,7 +49,7 @@ CREATE TABLE usuario(
     PRIMARY KEY(email)
 );
 
-create TABLE partida(
+create TABLE partidas(
 	codigo varchar(9),
     cantJugadores int(3),
     publicaPriv boolean,
@@ -57,7 +57,7 @@ create TABLE partida(
     createAt date,
     updateAt date,
     PRIMARY KEY(codigo),
-    FOREIGN KEY(cuestionario) REFERENCES cuestionario(id)
+    FOREIGN KEY(cuestionario) REFERENCES cuestionarios(id)
 );
 
 create TABLE jugar(
@@ -69,6 +69,6 @@ create TABLE jugar(
     createAt date,
     updateAt date,
     PRIMARY KEY(id),
-    FOREIGN KEY(usuario) REFERENCES usuario(email),
-    FOREIGN KEY(partida) REFERENCES partida(codigo)
+    FOREIGN KEY(usuario) REFERENCES usuarios(email),
+    FOREIGN KEY(partida) REFERENCES partidas(codigo)
 );

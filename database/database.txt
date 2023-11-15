@@ -74,12 +74,14 @@ create TABLE jugars(
 );
 
 -- Generos
+
 INSERT INTO generos (nombres, createAt, updateAt) VALUES
-('Acción', '2023-11-15', '2023-11-15'),
-('Drama', '2023-11-15', '2023-11-15'),
-('Comedia', '2023-11-15', '2023-11-15'),
-('Ciencia Ficción', '2023-11-15', '2023-11-15'),
-('Aventura', '2023-11-15', '2023-11-15');
+('peliculas', '2023-11-15', '2023-11-15'),
+('series', '2023-11-15', '2023-11-15'),
+('libros', '2023-11-15', '2023-11-15'),
+('anime', '2023-11-15', '2023-11-15'),
+('juegos', '2023-11-15', '2023-11-15'),
+('deportes', '2023-11-15', '2023-11-15');
 
 -- Cuestionarios
 INSERT INTO cuestionarios (tematica, genero, createAt, updateAt) VALUES
@@ -147,3 +149,17 @@ INSERT INTO jugars (partida, usuario, conectado, puntajeJugador, createAt, updat
 ('MNO345', 'usuario3@email.com', true, 26, '2023-11-15', '2023-11-15'),
 ('MNO345', 'usuario4@email.com', true, 29, '2023-11-15', '2023-11-15'),
 ('MNO345', 'usuario5@email.com', true, 27, '2023-11-15', '2023-11-15');
+
+
+DELIMITER //
+
+CREATE PROCEDURE obtenerPartidasPorGenero(IN nombreGenero VARCHAR(60))
+BEGIN
+    SELECT *
+    FROM partidas
+    JOIN cuestionarios ON cuestionarios.id = partidas.cuestionario
+    JOIN generos ON generos.id = cuestionarios.genero
+    WHERE generos.nombres = nombreGenero;
+END //
+
+DELIMITER ;

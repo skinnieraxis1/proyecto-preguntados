@@ -2,15 +2,19 @@ CREATE DATABASE incognitiva;
 use incognitiva; 
 
 create table genero(
-	id int(11),
+	id int(11) AUTO_INCREMENT,
     nombres varchar(60),
+    createAt date,
+    updateAt date,
     PRIMARY KEY(id)
 );
 
 create table cuestionario(
-	id int(11),
+	id int(11) AUTO_INCREMENT,
     tematica varchar(60),
     genero int(11),
+    createAt date,
+    updateAt date,
     PRIMARY KEY(id),
    	FOREIGN KEY(genero) REFERENCES genero(id)
 );
@@ -21,6 +25,8 @@ create table pregunta(
     puntaje int(11),
     tipo varchar(11),
     cuestionario int(11),
+    createAt date,
+    updateAt date,
     PRIMARY KEY(id),
     FOREIGN KEY(cuestionario) REFERENCES cuestionario(id)
 );
@@ -36,10 +42,11 @@ create TABLE respuesta(
 
 CREATE TABLE usuario(
     nombre VARCHAR(40),
-    email VARCHAR(60),
+    email VARCHAR(60) ,
     contraseña VARCHAR(40),
-    id int(11),
-    PRIMARY KEY(id)
+    createAt date,
+    updateAt date,
+    PRIMARY KEY(email)
 );
 
 create TABLE partida(
@@ -47,6 +54,8 @@ create TABLE partida(
     cantJugadores int(3),
     publicaPriv boolean,
     cuestionario int(11),
+    createAt date,
+    updateAt date,
     PRIMARY KEY(codigo),
     FOREIGN KEY(cuestionario) REFERENCES cuestionario(id)
 );
@@ -54,10 +63,12 @@ create TABLE partida(
 create TABLE jugar(
     id int(11) AUTO_INCREMENT,
 	partida varchar(9),
-    usuario int(11),
+    usuario VARCHAR(60),
     conectado boolean,
     puntajeJugador int(11),
+    createAt date,
+    updateAt date,
     PRIMARY KEY(id),
-    FOREIGN KEY(usuario) REFERENCES usuario(id),
+    FOREIGN KEY(usuario) REFERENCES usuario(email),
     FOREIGN KEY(partida) REFERENCES partida(codigo)
 );

@@ -54,7 +54,7 @@ create TABLE partidas(
     cantJugadores int(3),
     publicaPriv boolean,
     cuestionario int(11),
-    nombre varchar(30),
+    nombre varchar(20),
     createAt date,
     updateAt date,
     PRIMARY KEY(codigo),
@@ -74,82 +74,72 @@ create TABLE jugars(
     FOREIGN KEY(partida) REFERENCES partidas(codigo)
 );
 
--- Generos
-
+-- Insertar datos en la tabla de géneros
 INSERT INTO generos (nombres, createAt, updateAt) VALUES
-('peliculas', '2023-11-15', '2023-11-15'),
-('series', '2023-11-15', '2023-11-15'),
-('libros', '2023-11-15', '2023-11-15'),
-('anime', '2023-11-15', '2023-11-15'),
-('juegos', '2023-11-15', '2023-11-15'),
-('deportes', '2023-11-15', '2023-11-15');
+    ('Juegos', '2023-11-16', '2023-11-16'),
+    ('Educación', '2023-11-16', '2023-11-16'),
+    ('Películas', '2023-11-16', '2023-11-16'),
+    ('Series', '2023-11-16', '2023-11-16'),
+    ('Animes', '2023-11-16', '2023-11-16'),
+    ('Deportes', '2023-11-16', '2023-11-16'),
+    ('Música', '2023-11-16', '2023-11-16'),
+    ('Libros', '2023-11-16', '2023-11-16');
 
--- Cuestionarios
+-- Insertar datos en la tabla de cuestionarios
 INSERT INTO cuestionarios (tematica, genero, createAt, updateAt) VALUES
-('Preguntas de Acción', 1, '2023-11-15', '2023-11-15'),
-('Historias Emotivas', 2, '2023-11-15', '2023-11-15'),
-('Humor a la Vista', 3, '2023-11-15', '2023-11-15'),
-('Viajes en el Tiempo', 4, '2023-11-15', '2023-11-15'),
-('Desafío en la Selva', 5, '2023-11-15', '2023-11-15');
+    ('Juegos de Acción', 1, '2023-11-16', '2023-11-16'),
+    ('Matemáticas Básicas', 2, '2023-11-16', '2023-11-16'),
+    ('Películas de Ciencia Ficción', 3, '2023-11-16', '2023-11-16'),
+    ('Comedias de TV', 4, '2023-11-16', '2023-11-16'),
+    ('Animes de Aventura', 5, '2023-11-16', '2023-11-16'),
+    ('Deportes Extremos', 6, '2023-11-16', '2023-11-16'),
+    ('Géneros Musicales', 7, '2023-11-16', '2023-11-16'),
+    ('Libros de Fantasía', 8, '2023-11-16', '2023-11-16');
 
--- Preguntas
+-- Insertar datos en la tabla de preguntas
 INSERT INTO preguntas (descripcion, puntaje, tipo, cuestionario, createAt, updateAt) VALUES
-('¿Cuál es la película de acción más taquillera?', 10, 'MultiplesRespuestas', 1, '2023-11-15', '2023-11-15'),
-('Describe una situación emotiva que te haya marcado.', 15, 'Ordenar', 2, '2023-11-15', '2023-11-15'),
-('¿Es verdad que el sol gira alrededor de la Tierra?', 5, 'TrueOrFalse', 3, '2023-11-15', '2023-11-15'),
-('Si pudieras viajar en el tiempo, ¿a qué época irías?', 10, 'MultiplesRespuestas', 4, '2023-11-15', '2023-11-15'),
-('Ordena los siguientes eventos cronológicamente:', 8, 'Ordenar', 5, '2023-11-15', '2023-11-15');
+    ('¿Cuál es tu juego de acción favorito?', 10, 'multiplesRespuestas', 1, '2023-11-16', '2023-11-16'),
+    ('¿Cuánto es 2 + 2?', 8, 'TrueOrFalse', 2, '2023-11-16', '2023-11-16'),
+    ('¿Cuál es tu película de ciencia ficción preferida?', 12, 'ordenar', 3, '2023-11-16', '2023-11-16'),
+    ('¿Cuál es tu serie de comedia más vista?', 15, 'multiplesRespuestas', 4, '2023-11-16', '2023-11-16'),
+    ('¿Cuál es tu anime de aventura favorito?', 10, 'multiplesRespuestas', 5, '2023-11-16', '2023-11-16'),
+    ('¿Qué deporte extremo te gustaría practicar?', 8, 'TrueOrFalse', 6, '2023-11-16', '2023-11-16'),
+    ('¿Cuál es tu género musical favorito?', 12, 'ordenar', 7, '2023-11-16', '2023-11-16'),
+    ('¿Cuál es tu libro de fantasía más apreciado?', 15, 'multiplesRespuestas', 8, '2023-11-16', '2023-11-16');
 
--- Respuestas
+-- Insertar datos en la tabla de respuestas
 INSERT INTO respuestas (descripcion, correcta, pregunta) VALUES
-('Duro de Matar', true, 1),
-('Matrix', false, 1),
-('La Lista de Schindler', false, 2),
-('Forrest Gump', true, 2),
-('Verdadero', true, 3),
-('Falso', false, 3),
-('Año 3000', false, 4),
-('Época de los Dinosaurios', true, 4),
-('Descubrimiento de América', true, 5),
-('Revolución Industrial', true, 5),
-('Llegada a la Luna', true, 5);
+    ('Fortnite', true, 1),
+    ('Minecraft', false, 1),
+    ('Call of Duty', true, 1),
+    ('Verdadero', true, 2),
+    ('Falso', false, 2);
+    -- Repite el patrón para otras respuestas...
 
--- Usuarios
+-- Insertar datos en la tabla de partidas (solo un ejemplo)
+INSERT INTO partidas (codigo, cantJugadores, publicaPriv, cuestionario, nombre, createAt, updateAt) VALUES
+    ('123ABC456', 4, true, 1, 'Partida de Juegos de Acción', '2023-11-16', '2023-11-16');
+
+
+-- Insertar más datos en la tabla de usuarios
 INSERT INTO usuarios (nombre, email, contrasena, createAt, updateAt) VALUES
-('Usuario1', 'usuario1@email.com', 'contraseña1', '2023-11-15', '2023-11-15'),
-('Usuario2', 'usuario2@email.com', 'contraseña2', '2023-11-15', '2023-11-15'),
-('Usuario3', 'usuario3@email.com', 'contraseña3', '2023-11-15', '2023-11-15'),
-('Usuario4', 'usuario4@email.com', 'contraseña4', '2023-11-15', '2023-11-15'),
-('Usuario5', 'usuario5@email.com', 'contraseña5', '2023-11-15', '2023-11-15');
+    ('Usuario2', 'usuario2@example.com', 'contraseña2', '2023-11-16', '2023-11-16'),
+    ('Usuario3', 'usuario3@example.com', 'contraseña3', '2023-11-16', '2023-11-16'),
+    ('Usuario4', 'usuario4@example.com', 'contraseña4', '2023-11-16', '2023-11-16'),
+    ('Usuario5', 'usuario5@example.com', 'contraseña5', '2023-11-16', '2023-11-16'),
+    ('Usuario6', 'usuario6@example.com', 'contraseña6', '2023-11-16', '2023-11-16'),
+    ('Usuario1', 'usuario1@example.com', 'contraseña1', '2023-11-16', '2023-11-16');
 
--- Partidas
-INSERT INTO partidas (codigo, cantJugadores, publicaPriv, cuestionario, createAt, updateAt) VALUES
-('ABC123', 4, true, 1, '2023-11-15', '2023-11-15'),
-('DEF456', 3, false, 2, '2023-11-15', '2023-11-15'),
-('GHI789', 5, true, 3, '2023-11-15', '2023-11-15'),
-('JKL012', 2, false, 4, '2023-11-15', '2023-11-15'),
-('MNO345', 6, true, 5, '2023-11-15', '2023-11-15');
+-- Insertar más datos en la tabla de partidas
+INSERT INTO partidas (codigo, cantJugadores, publicaPriv, cuestionario, nombre, createAt, updateAt) VALUES
+    ('456DEF789', 3, false, 2, 'Partida de Matemáticas Básicas', '2023-11-16', '2023-11-16'),
+    ('789GHI012', 5, true, 3, 'Partida de Películas de Ciencia Ficción', '2023-11-16', '2023-11-16'),
+    ('012JKL345', 4, false, 4, 'Partida de Comedias de TV', '2023-11-16', '2023-11-16'),
+    ('345MNO678', 2, true, 5, 'Partida de Animes de Aventura', '2023-11-16', '2023-11-16'),
+    ('678PQR901', 3, true, 6, 'Partida de Deportes Extremos', '2023-11-16', '2023-11-16'),
+    ('901STU234', 5, false, 7, 'Partida de Géneros Musicales', '2023-11-16', '2023-11-16'),
+    ('234UVW567', 4, true, 8, 'Partida de Libros de Fantasía', '2023-11-16', '2023-11-16');
 
--- Jugars
-INSERT INTO jugars (partida, usuario, conectado, puntajeJugador, createAt, updateAt) VALUES
-('ABC123', 'usuario1@email.com', true, 20, '2023-11-15', '2023-11-15'),
-('ABC123', 'usuario2@email.com', true, 18, '2023-11-15', '2023-11-15'),
-('ABC123', 'usuario3@email.com', true, 15, '2023-11-15', '2023-11-15'),
-('ABC123', 'usuario4@email.com', true, 22, '2023-11-15', '2023-11-15'),
-('DEF456', 'usuario1@email.com', true, 25, '2023-11-15', '2023-11-15'),
-('DEF456', 'usuario2@email.com', true, 23, '2023-11-15', '2023-11-15'),
-('DEF456', 'usuario3@email.com', true, 19, '2023-11-15', '2023-11-15'),
-('GHI789', 'usuario1@email.com', true, 30, '2023-11-15', '2023-11-15'),
-('GHI789', 'usuario2@email.com', true, 28, '2023-11-15', '2023-11-15'),
-('GHI789', 'usuario3@email.com', true, 26, '2023-11-15', '2023-11-15'),
-('GHI789', 'usuario4@email.com', true, 24, '2023-11-15', '2023-11-15'),
-('JKL012', 'usuario1@email.com', true, 15, '2023-11-15', '2023-11-15'),
-('JKL012', 'usuario2@email.com', true, 14, '2023-11-15', '2023-11-15'),
-('MNO345', 'usuario1@email.com', true, 28, '2023-11-15', '2023-11-15'),
-('MNO345', 'usuario2@email.com', true, 30, '2023-11-15', '2023-11-15'),
-('MNO345', 'usuario3@email.com', true, 26, '2023-11-15', '2023-11-15'),
-('MNO345', 'usuario4@email.com', true, 29, '2023-11-15', '2023-11-15'),
-('MNO345', 'usuario5@email.com', true, 27, '2023-11-15', '2023-11-15');
 
 
 DELIMITER //

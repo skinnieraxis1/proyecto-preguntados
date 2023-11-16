@@ -54,6 +54,7 @@ create TABLE partidas(
     cantJugadores int(3),
     publicaPriv boolean,
     cuestionario int(11),
+    nombre varchar(30),
     createAt date,
     updateAt date,
     PRIMARY KEY(codigo),

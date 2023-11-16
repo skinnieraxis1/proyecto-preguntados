@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body{
+  margin: 0px;
+  background-image: url("./fondoIncognitivo.png");
+  background-size: contain;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0px;
+}
+
+.zonaDeApp{
+  margin-left: 16rem;
+}

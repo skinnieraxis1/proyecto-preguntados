@@ -154,3 +154,16 @@ BEGIN
 END //
 
 DELIMITER ;
+
+
+DELIMITER //
+
+CREATE PROCEDURE obtenerUsuarioPorPartida(IN codigoPartida VARCHAR(60))
+BEGIN
+    SELECT *
+    FROM jugars
+    JOIN usuarios ON usuarios.email = jugars.usuario
+    WHERE jugars.partida = codigoPartida;
+END //
+
+DELIMITER ;

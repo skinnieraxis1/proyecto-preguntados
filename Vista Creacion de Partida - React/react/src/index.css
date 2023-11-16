@@ -1,0 +1,7 @@
+body {
+  background-image: url('images/fondo_incognitivo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+}
